@@ -1,0 +1,13 @@
+// safe traversal operator - zebrine chyle ak je objekt null
+
+<!-- stary sposob zabranit chybe ak je v objekte null -->
+<span *ngIf="task.assignee">{{task.assignee.name }}</span>
+
+<!-- safe traversal operator -->
+<span *ngIf="task.assignee">{{task.assignee?.name }}</span>
+
+// app.component.ts
+task={
+   title: 'Title',
+   assignee: null
+}

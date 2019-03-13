@@ -1,0 +1,19 @@
+ngModel - [(ngModel)] - banana in the box
+		- Dom object
+		- nemusime opakovat kod
+		- musi sa importovat modul Forms (nieje defaultne)
+		
+- posielanie dat z view do componentu
+
+// view definujeme premennu v ngModel
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp2()"/>
+
+
+// musi byt deklarovana na nic alebo nejaky default 
+email: "me@example.com";
+
+
+// funkcia ktora sa vykona po stlaceni enteru
+onKeyUp2(){
+        console.log('ngModel '+this.email);
+}

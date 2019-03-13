@@ -1,0 +1,20 @@
+// aby vznikol komponent treba exportovat triedu pomocou export 
+-> moduleName.ts
+
+export class Point { 
+	constructor(private _x?: number, private _y?:number){
+    }
+	
+    draw() {
+        console.log('X: ' + this._x + ', Y: ' + this._y);
+    }
+    
+}
+
+// do noveho TS suboru treba modul zasa importovat podla nazvu triedy (nie suboru, lebo trieda sa exportuje nie nazov suboru export class Point)
+-> newFile.ts
+
+import { Point } from './point';
+
+let point = new Point(1,10); // argumenty
+point.draw();

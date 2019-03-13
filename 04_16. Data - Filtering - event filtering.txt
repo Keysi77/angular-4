@@ -1,0 +1,20 @@
+FILTERING - filtrovanie event bindov
+
+// stary sposob bez filteru
+
+<input (keyup)="onKeyUp($event)"/>
+
+onKeyUp($event){
+        // ak klikneme enter vykona sa akcia
+        if($event.keyCode === 13) console.log('ENTER clicked');
+		// 13 - kod enteru
+}
+
+// novy sposob s event filterom
+
+<input (keyup.enter)="onKeyUp2()"/>
+
+onKeyUp2(){
+         console.log('enter clicked within filter');
+}
+

@@ -1,0 +1,17 @@
+Moze ich byt na stranke 10tky az sovky 
+Sklada sa z:
+- Data
+- HTML Template
+- Logic
+
+Kazda appka ma svoj root komponent - App Component
+- sklada sa tu appka
+- zlucuje vsetky komponenty - Modul 
+
+MODUL - je viacero komponentov pre urcitu sekciu
+- App module - Module 1 - Module 2 ... Module n
+
+COMPNENT:
+- vytvorit component
+- registrovat ho v moduly (importnut)
+- pridat elemnmt v HTML znacku 

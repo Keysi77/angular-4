@@ -1,0 +1,26 @@
+// Properties - settery a gettery
+
+class Point { 
+
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+    constructor(private x?: number, private y?:number){
+    }
+	// pomocna metoda pre citanie hodnoty x
+	get X(){ // getter 
+		return this.x;
+	}
+	set X(value){ // setter
+		if(value < 0)
+			throw new Error('nemoze byt mensie ako 0');
+		this.x = value; // nastavi novu hodnotu
+	}
+}
+
+let point = new Point(1,10); // argumenty
+point.draw();
+point.x // aby sme mohli precitat tu hodnotu treba metodu s  return
+let x = point.getX(); // metoda ktora vrati hodnotu X aj ked je private 
+let x = point.X; // v TS zapise
+point.setX(5); -> point.X = 5;

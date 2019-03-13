@@ -1,0 +1,148 @@
+REQUIREMENT:
+
+- nainstalovat Node.js -  node --version
+- nainstalovat Angular CLI cez - npm install -g @angular/cli
+- update na najnovsi - npm install -g @angular/cli@latest
+- npm i -g npm-check-updates
+
+NOVY PROJEKT:
+
+- novy projekt cez CMDer - ng new nazov-projektu
+- hodit sa do projektu - cd nazo-projektu/
+- spustit server - ng serve 
+- localhost:4200
+
+COMPONENTS:
+
+- najde nove moduly - npm install @angular/http@latest
+- novy komponent - ng g c component-name
+- Bootstrap - ng add @ng-bootstrap/schematics
+	      // save zamena ze oho ulozi do dependency
+	    - npm install bootstrap --save 
+	      // do globalnych styles.css importovat:
+	    - @import "~bootstrap/dist/css/bootstrap.css"
+
+SERVICE:
+
+- vygenerovanie noveho servicu: ng g s nazor
+- prisat do app.module do providerov nazov servicu
+- vytvorit zlozku pre Services (mkdir services) 
+- presunut subory do tejto zlozky: mv http.service.* services
+
+DIRECTIVE: 
+
+- vygenerovanie novej directivy: ng g d nazov
+
+MODULE:
+
+- pre generovanie modulu, ak mame v componente vela importov tak sa separuju osobitne tie ktore k sebe patria
+- ng m nazov-modulu 
+- presun zo zlozky ktora je tam zbytocna - mv src/app/mat-components/mat-components.module.ts src/app
+- zmazanie zlozky - rm -rf src/app/mat-components
+
+
+BUILD:
+
+- Ahead of time Compilation - ked davame do produce kod
+			    - rychly start, mensi bundle.js, zachyti chyby pred nahratim na server
+
+- Angular CLI compiler - node_modules/.bin/ngc (treba potom restartovat VS)
+		       - zachyti chybu pred buildom 
+
+- ng build -prod - spravi vsetko pre build do produce
+		 - bez —prod sa vybuilduje kod ale neprebehne minification, uglyfication, bundling
+		 - minification, uglyfication, bundling, dead code remove, aj Angular CLI compiler
+		 - vytvori sa novy folder /dist kde je vsetko vybuildovane (pripravene nahrat na server)
+
+LINTER:				
+
+- ng lint - zobrazi chybne zapisany kod pred deployom
+	  - tslint.json -> ”no-trailing-whitespace": false, - zakaze aby kontroloval medzery kde nemaju byt 
+- ng lint —fix - fixne chyby ktore moze (zmaze medzeri, odstrani nepotreben importy, let na const…)
+
+GITHUB PAGES:
+
+- Angular CLI ma vstavany GIT, tak staci pisat rovno do konzole prikazy
+- novy repozitar na gite a prikaz - git remote add origin https://github.com/Keysi77/followers-app.git
+- push - git push origin master
+
+- nainstalovat package - sudo npm i -g angular-cli-ghpages
+- ng build --prod --base-href="https://Keysi77.github.io/followers-app/"
+- build na GIT webpages cez moje meno a nazov repozitara 
+- deploy na GIT webpages - sudo ngh
+- https://keysi77.github.io/followers-app/
+
+FIREBASE:
+
+- vytvorit novy projekt na - https://console.firebase.google.com/?pli=1
+- nainstalovat do projektu firebase - sudo npm i -g firebase-tools
+- login do firebase - firebase login
+		    - firebase init
+- vybrat hosting sluzbu (space + enter)
+- nastavit v firebase.json - "publiclic": "dist" // zlozka ktora sa bude deployovat
+- ng build —prod
+- firebase deploy
+
+- NOVY PROJEKT - sudo ng new nazov-projektu
+	       - npm install firebase —save // firebase
+	       - npm install angularfire2 —save // pre pracu s angular 2+ na firebase
+	       - firebase.console / overview a skopirovat properties v configu do projektu - enviroment.ts
+	       
+
+HEROKU:
+
+- registrovat na heroku + stiahnut a nainstalovat Heroku CLI
+- heroku login + vyplnit email a password
+- heroku create - vytvori unikatne meno aplikacie
+- heroku open - otvori zakladnu heroku aplikaciu, ktoru treba replacnut nasou
+- V package.json vlozit z devdependencies do dependencies: 
+				- “@angular/cli": "1.2.4",
+				- “@angular/compiler-cli": "^4.0.0",
+				- "typescript": "~2.3.3"
+- v package.json do sekcie script vlozit - "postinstall": "ng build --prod"
+- npm i express --save
+- v package.json nastavit start na -  "start": "node server.js ", lebo pustame uz node server
+- pridat na git - git add.
+		- git commit -m “koment…”
+		- git push heroku master
+		- heroku open
+
+PERMISSION PROBLEMS:
+
+- whoami
+
+> user_name
+
+- sudo chown -R user_name /usr/local/lib/node_modules/ 
+- sudo chown -R user_name /usr/local/bin/ 
+- sudo chown -R user_name /usr/local/share/
+
+ANIMATE.CSS:
+
+- npm install animate.css --save
+
+MATERIAL:
+
+- https://material.angular.io/guide/getting-started
+- novy projekt
+- component development kit - npm i --save @angular/cdk
+- material - npm i --save @angular/material
+- animacie - npm i --save @angular/animations
+- hammerJS - npm i --save hammerjs
+- vzdy treba naimportovat API pre dany komponent - checkbox - import {MatCheckboxModule ... aj dalsie} from '@angular/material';
+- SCSS-ka vzdy vlozit do angular.json do style:[...]
+
+REDUX:
+
+- kniznica ktora pomoze manazovat staty v aplikacii - pri zlozitych data flowov aplikacie (len pri large SPA)
+- jedny DATA pre viacero view1, view2 ... viewn aby sme nemuseli kopirovat tieto data do komponentov pre tieto views
+- npm install redux ng2-redux --save (nefunguje)
+- npm install @angular-redux/store
+- updatnut CLI - npm install angular-cli -g
+- state mutacie - npm install tassign --save 
+- pm install immutable --save
+- chrome redux devtools - nainstalovat debugger
+
+
+
+

@@ -1,0 +1,24 @@
+// ACCES MODIFIERS
+// public (default bez zadavania), private a protected
+// ak chceme zabranit prepisovaniu point.x = 5...
+
+class Point{ //interface ako v Jave alebo c#
+    // private x: number; // mozno ich zapisat rovno do constructora (len TS ponuka)
+    // private y: number;
+	
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+
+	constructor(private x?: number, private y?: number){
+       // this.x = x; // nieje treba ani toto ak to mame v contructore
+        // this.y = y;
+    }
+}
+
+
+let point = new Point(); // ak je cez ? optional parametre netreba dagat argumenty
+let point = new Point(1,3); // 1 a 3 su argumenty
+
+point.x = 3; // nebude k nim pristup mimo triedu
+point.draw();

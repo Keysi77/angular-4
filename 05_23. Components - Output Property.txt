@@ -1,0 +1,15 @@
+// Rovnako ako Input importovat
+import { Component, OnInit, Input, Output } from '@angular/core';
+
+// deklaracia Output premennej
+@Output() change = new EventEmitter();
+
+// po kliknuti sa vypise
+onFavoriteChange(){
+      console.log('changed');
+}
+
+// click metoda
+onClick(){
+    this.change.emit(); // povieme programu ze sa nieco stalo ked klikneme
+}

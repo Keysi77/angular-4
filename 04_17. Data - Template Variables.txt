@@ -1,0 +1,21 @@
+Template premmenne - mozeme si pomocou nich vytiahnut rozne parametere z DOM-u
+				   - value co je v inpute
+				   
+// stary sposob bez template variables		
+		   
+<input (keyup.enter)="onKeyUp($event)"/>
+
+onKeyUp($event){
+        // hodnota ktora bola zadana do inputu
+        console.log($event.target.value);
+        
+    }
+// s Template Variables-----------------------------------------------
+
+<input #email (keyup.enter)="onKeyUp(email.value)"/>
+
+onKeyUp(email){
+        // hodnota ktora bola zadana do inputu
+        console.log(email);
+        
+    }

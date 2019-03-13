@@ -1,0 +1,8 @@
+// PRETYPOVANIE
+
+let message; // any
+message = 'abc'; 
+// pretypovanie na String leob defaultne je any
+let endsWithC = (<string>message).endsWith('c');
+// metoda 2 na pretypovanie
+let endsWithC2 = (message as string).endsWith('c');

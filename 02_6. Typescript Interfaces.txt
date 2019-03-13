@@ -1,0 +1,39 @@
+// INTERFACES
+
+// objekt ako vstupny parameter ked nevieme kolko bude parametrov vstupovat 
+// napr auto ked ma viac vlastnosti a nevieme koolko ich bude
+
+
+interface Point{ 
+//interface ako v Jave alebo c#
+// zacinaju s  valkym pismenom 
+    x: number,
+    y: number
+	// mozno vlozit aj funckiu
+	functionName: () => void
+}
+
+let drawPointInterface = (point: Point ) =>{
+	// bude pracovat s interfacom
+    // posleme tu cely objekt z interfacu a nemusime vypisovat x,z,y.... parametre
+	// pristup k point.x, point.y
+}
+
+// alebo osobitne 
+let drawPointInterface = (pointX: Point, pointY: Point ) =>{
+	// ....
+
+}
+
+
+-------------------------------------------------------
+// inline anotation
+let drawPoint = (point: {x: number, y: number}) =>{
+
+    // ...
+}
+
+drawPoint({
+    x: 1,
+    y: 2
+})

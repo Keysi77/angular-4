@@ -1,0 +1,23 @@
+ import { Component, OnInit, Input } from '@angular/core';
+ // treba importovat Input 
+  
+ 
+ @Input() isFavorite: boolean;
+ // mark as input property pomocou anotacie
+ // ak by nebola anotacia nastala by chyba
+ // Can't bind to 'isFavorite' since it isn't a known property of 'favorite'. ("<courses></courses>
+
+
+ 
+ // VIEW
+ 
+ // ..  nieco na zobrazenie 
+ 
+ // DRUHA MOZNOST-------------------------------------------------------------------
+ 
+ // nedame import a anotaciu @Input() ale do Componentu sa nadeklaruju inputz
+ 
+ inputs: ['isFavorite']
+ 
+ // v classe sa uz potom nemusi pouzit anotacia pri premennej
+ isFavorite: boolean;

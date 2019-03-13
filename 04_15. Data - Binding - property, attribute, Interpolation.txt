@@ -1,0 +1,78 @@
+[BINDING]
+https://www.udemy.com/the-complete-angular-master-class/learn/v4/t/lecture/7348990?start=0
+- druhy sposob bindovania
+	component -> view
+	view -> componet
+///////////////////////////////////////////////////////////////////////////////////
+Interpotion - h lementy, div, spany.... pre text
+
+    imgUrl = 'urlobrazka...'
+	<img src="{{imgUrl}}"/>
+	
+///////////////////////////////////////////////////////////////////////////////////	
+Property binding - binduje javascript vlastnost
+
+    imgUrl = 'urlobrazka...'
+	<img [src]="imgUrl"/> 
+	
+///////////////////////////////////////////////////////////////////////////////////
+Attribute bining - binduje atributy napr colspan - nemozno cez property binding
+			colSpan =2;
+			
+			<table>
+                <tr>
+					// nebude fungovat
+                    <td [colspan]="colspan"> </td>
+					// prefix - povieme ze sa jedna o attribut
+					<td [colspan]="colspan"> </td>
+                </tr>
+            </table>
+			
+///////////////////////////////////////////////////////////////////////////////////	
+Class Binding - pridame classu podla nejakej podmienky
+- pridame do buttonu classu pod podmienky
+	    <button class="btn btn-primary" [class.active]="isActive"> sdfsf</button>
+		
+		do componentu pridat premennu isActive = true; 
+		
+///////////////////////////////////////////////////////////////////////////////////	
+Style Binding - bindovanie css vlastnosti
+- https://www.w3schools.com/jsref/dom_obj_style.asp
+
+ <button [style.backgroundColor]="isActiveStyle ? 'blue' : 'red' "> style binding</button>
+
+podla premennej vieme riadit podmienku true/false
+isActiveStyle = true/false;
+
+///////////////////////////////////////////////////////////////////////////////////
+Event Binding - bindovanie eventov - klikanie, mouse over, 
+- tak ako v javascriupte event listener
+
+<div (click)="onDivClick">
+                <button (click) = "onSave($event)"> Event binding </button> 
+</div>
+
+(click) - je event na ktory chceme zavolat metodu
+onSave($event){ - metoda ktora sa vykona pri evente click
+		$event.stopPropagation();
+        console.log('sdfsf');
+		// do som
+    } 
+onDivClick(){
+        console.log('clicked div')
+}
+$event - parameter ktory vzdy nieco reprezentuje - DOM event
+	   - prida dalsie parametre ku ktorym sa da pristupovat
+	   - x,z osy,  movment...
+
+$event.stopPropagation();
+        - aby sa vzdy vyukonala len jedna funkcia nie svetky
+        - event bubbling
+        - klik sa vykona len na metode onSave a onDivClick
+		
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+	
+	

@@ -1,0 +1,37 @@
+Custom pipe - treba vytvorit novy subor nazov.pipe.ts
+			- rovnaky sposob ako pri vytvarani servicu alebo komponentu
+			- registrovat v moduly
+			
+VIEW:
+
+{{ text | summary }} // vypise len prvych 50 slov a da ... 
+{{ text | summary: 10 }} // vypise len prvych 10 ak nezadame bude def 50
+
+COMPONENT:
+
+text =`
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+`
+
+PIPE:
+
+// custom Pipe
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+    name: 'summary' // meno pipu ktory sa pouzije
+})
+export class SummaryPipe implements PipeTransform{
+    transform(value: string, limit?: number){ // musi sa implementovat PipeTransform
+        // a metoda transform
+        if(!value)
+            return null;
+        // nastavenie defaultneho limu na 50 alebo sa nastavi vlastnz vo view
+        let actualLimit = (limit) ? limit : 50;
+        return value.substr(0, actualLimit) + '...'; // 50 characters sa vypise
+    }
+}
+
+APP MODULE:
+
+pridat SummaryPipe do declarations

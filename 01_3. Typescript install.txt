@@ -1,0 +1,15 @@
+- instalacia: npm install -g typescript
+
+- overenie instalacie: tsc --version
+
+- mkdir projekt-meno
+
+- cd projekt-meno/
+
+- code nazov.ts 
+
+- ts subor treba transpillnut na javascript: tsc nazov.ts
+
+- vztvori sa novy js subor ktory je z typescriptu pretranspillovany na javasctip
+
+- execute: node nazov.js

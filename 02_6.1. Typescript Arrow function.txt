@@ -1,0 +1,22 @@
+// S PARAMETROM
+
+let functionName = function(parameterName){
+	// ...
+}
+
+let functionName = (parameterName) => {
+	// ...
+}
+
+// BEZ PARAMETRU
+
+let functionName = function(parameterName){
+	// ...
+}
+
+let functionName = () => {
+	// ... bez parametru
+}
+
+
+// to iste co v Jave alebo c# - LAMBDY

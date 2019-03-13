@@ -1,0 +1,10 @@
+  ngClass 
+// stary spoosb
+  [class.glyphicon-star] = "isSelected"
+  [class.glyphicon-star-empty] = "!isSelected"
+  
+  // miesto opakovania cez ngClass objekt do ktoreho idu styly
+  [ngClass]="{
+      'glyphicon-star' : isSelected,
+      'glyphicon-star-empty': !isSelected
+  }"

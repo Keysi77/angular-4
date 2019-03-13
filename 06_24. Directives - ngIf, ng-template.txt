@@ -1,0 +1,15 @@
+// ngIf
+
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+
+// ak je splnena podmienka vykona sa template za 'then' cize coursesList
+// ak nieje splnena vykona sa template za 'else' cize noCourses
+// vygeneruje sa pomocou ng-template (nie divu)
+// nieco ako ternarny operator v Jave
+  
+<ng-template #coursesList>
+    List of Array is not empty (pomocou templatu)
+</ng-template>
+<ng-template #noCourses>
+    No lists yet (pomocou templatu)
+</ng-template>

@@ -1,0 +1,42 @@
+- Nepisat logiku do komponentov ale do services 
+- nemusime opakovat logiku napr http volania na viacerych miestach
+- component by mal obsahovat len prezentacnu logiku ostatne do services
+
+- pridat novy service - nazov.service.ts (do /app zlozky nie do komponentu)
+
+SERVICE - logika
+
+export class CoursesService{
+    // vsetka logika na obsluhu npar http.get a pod
+    // miesto pre metody ktore nieco obsluhuju
+    getCourses(){
+        return ['prvy', 'druhy', 'treti'];
+    }
+    
+   
+}
+
+COMPONENT - vypisanie
+
+import { Component } from '@angular/core';
+import { CoursesService } from './courses.service';
+
+@Component({
+    selector: 'courses',
+    template: `{{title}}
+            <ul>
+                <li *ngFor="let course of courses"> {{course}}  </li>
+            </ul>
+    `
+  })
+
+export class CoursesComponent{
+    title = 'angular-fundamentals';
+    courses;
+	// inicializacia objektu
+    constructor(service: CoursesService){
+        // let service = new CoursesService; - pridat do konstruktora ako parameter
+		// aby sme ho vsade nemuseli prepisovat
+        this.courses = service.getCourses();
+    }
+}

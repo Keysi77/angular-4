@@ -1,0 +1,9 @@
+alias - vlastne meno property
+VIEW:
+<favorite [meno-property]="post.menoPremennej"></favorite>
+
+COMPONENT:
+
+@Input('meno-property') menoPremennej: boolean; // v yatvorkach je meno property
+
+// vyhodne ked chceme zmenit nazov premennej tak meno property (alias) zaruci ze bude vsetko fungovat aj po zmene 

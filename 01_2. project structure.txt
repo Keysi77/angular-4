@@ -1,0 +1,13 @@
+ZLOZKY
+
+- e2e        - testy pre aplikaciu end to end
+			 - testy ktore simuluju realneho pouzivatela
+			 - klikanie ako pri Selenium v Jave 
+
+- node modules  - 3th party libraries
+
+- src 		- source code aplikacie
+			- app - vstky komponenty a moduly aplikacie
+			- enviroment - konfiguracie, nastavenia
+			- index.html, typescript, css...
+			- main.ts - startovaci bod aplikacie

@@ -1,0 +1,11 @@
+// hidden
+// mozeme pouzit property binding lebo to je DOM object 
+// viac sa oplati pouzit ngIf lebo pri hidden existuju v DOM oba divy ale jeden z nich je vzdy len skyty
+// ak uzivatel tlacidlom skryva/odokryva element je lepsie pouzit hidden a mat vzdy divy v DOM
+
+<div [hidden]="courses.length == 0">
+    List of courses
+</div>
+<div [hidden]="courses.length > 0">
+    no list yet
+</div>

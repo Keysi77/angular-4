@@ -1,0 +1,15 @@
+// ngStyle - ako ngClass
+
+definujeme premennu ktora bude riadit styly true/false 
+ canSave = false;
+
+vo view vypiseme:
+<button
+    [ngStyle]="{
+        'backgroundColor': canSave ? 'blue': 'gray',
+        'color': canSave ? 'white': 'black',
+        'fontWeight': canSave ? 'bold': 'normal'
+    }"
+>
+    save
+</button>

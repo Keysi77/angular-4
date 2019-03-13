@@ -1,0 +1,27 @@
+// CLASS - skupina premennzych (properties) a funkcii(methods) ktore
+// ktore su si pribuzne
+// Cohesions - dedicnost
+class Point{ //interface ako v Jave alebo c#
+    x: number;
+    y: number;
+    // Metody
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+	
+    // konstruktor - metoda ktora je volana ked sa vytvori instancia triedy
+    // optional parameter cez '?' - multiple constructor - 
+    
+	constructor(x?: number, y?: number){
+	// aby sme nemuseli vypisovat pod sebou point.x, point.y, pont.z....
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
+// Objekt - instancia triedy
+let point = new Point(); // ak je cez ? optional parametre netreba dagat argumenty
+let point = new Point(1,3); // 1 a 3 su argumenty
+
+point.draw();

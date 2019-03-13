@@ -1,0 +1,21 @@
+// CLASS - skupina premennzych (properties) a funkcii(methods) ktore
+// ktore su si pribuzne
+// Cohesions - dedicnost
+class Point{ //interface ako v Jave alebo c#
+    x: number;
+    y: number;
+    // Metody
+    draw() {
+        console.log('X: ' + this.x + ', Y: ' + this.y);
+    }
+    getDistance(another: Point){
+
+    }
+}
+
+
+// Objekt - instancia triedy
+let point = new Point();
+point.x = 1;
+point.y = 2;
+point.draw();
